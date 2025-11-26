@@ -13,4 +13,78 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 rm(list = ls())
+library(readr)
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(ggplot2)
 ```
+
+Load in our data sets
+```{r}
+Modes <- read.csv("~/Documents/GitHub/Stat380Project/CODGameModes.csv")
+Player1 <- read.csv("~/Documents/GitHub/Stat380Project/CODGames_p1_380.csv")
+Player2 <- read.csv("~/Documents/GitHub/Stat380Project/CODGames_p2_380.csv")
+```
+
+## Task 1 -- Exploratory Analysis
+
+Remove hardcore indicators in a separate column to prepare the data for a join on the COD game modes data. I kept the data for each player seperate foe ease of use when trying to compare insights from each. A joint data set will be made soon below.
+```{r}
+Player1 <- Player1  %>%
+  mutate(Mode = str_replace(GameType, "HC - ", ""))
+
+Player2 <- Player2  %>%
+  mutate(Mode = str_replace(GameType, "HC - ", ""))
+```
+
+Join each players data with the game modes data so we can answer our research question, "Which game mode is most likely to reach the score limit?".
+```{r}
+Clean_p1 <- Player1 %>%
+  left_join(Modes, by = c("Mode" = "Mode"))
+
+Clean_p2 <- Player2 %>%
+  left_join(Modes, by = c("Mode" = "Mode"))
+```
+
+
+Need to be able to indentify whether or not score limit has been reached
+```{r}
+Clean_p1 <- Clean_p1 %>% 
+  separate(Result, into = c("PlayerTeam", "OtherTeam"), sep = "-", convert = TRUE) %>% 
+  mutate(MaxScore = pmax(PlayerTeam, OtherTeam),
+         LimitReached = MaxScore == ScoreLimit) %>% 
+  filter(Score != is.na(Score))
+
+Clean_p2 <- Clean_p2 %>% 
+  separate(Result, into = c("PlayerTeam", "OtherTeam"), sep = "-", convert = TRUE) %>% 
+  mutate(MaxScore = pmax(PlayerTeam, OtherTeam),
+         LimitReached = MaxScore == ScoreLimit) %>% 
+  filter(Score != is.na(Score))
+```
+
+
+Joined the players to make one large data set to more accurately answer our research question for task 1.
+```{r}
+Joined_players <- bind_rows(Clean_p1, Clean_p2)
+```
+
+Create visualization displaying the game modes and the proportion of them reaching the score limit. Simple bar chart to explain this.
+```{r}
+ggplot(
+  data = Joined_players %>%
+    group_by(Mode) %>%
+    summarise(
+      Pct_limit = mean(LimitReached)
+      ),
+  mapping = aes(x = Mode, y = Pct_limit)
+) + 
+  labs(
+  title = "Game Modes by Score Limit",
+  x = "Game Modes",
+  y = "Percentage of Score Limit Reached"
+) +
+  geom_col(width = 0.5, fill = "lightblue") +
+  theme_bw()
+```
+
