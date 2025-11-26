@@ -18,13 +18,14 @@ library(tidyr)
 library(dplyr)
 library(stringr)
 library(ggplot2)
+library(forcats)
 ```
 
 Load in our data sets
 ```{r}
-Modes <- read.csv("~/Documents/GitHub/Stat380Project/CODGameModes.csv")
-Player1 <- read.csv("~/Documents/GitHub/Stat380Project/CODGames_p1_380.csv")
-Player2 <- read.csv("~/Documents/GitHub/Stat380Project/CODGames_p2_380.csv")
+Modes <- read.csv("CODGameModes.csv")
+Player1 <- read.csv("CODGames_p1_380.csv")
+Player2 <- read.csv("CODGames_p2_380.csv")
 ```
 
 ## Task 1 -- Exploratory Analysis
@@ -88,3 +89,57 @@ ggplot(
   theme_bw()
 ```
 
+## Task 2 -- Inference
+
+#### Which predictors are associated with the TotalXP?
+
+##### Convert categorical Variables
+```{r}
+Joined_players2 <- Joined_players %>%
+  # Convert categorical variables to factors
+  mutate(
+    GameType = as.factor(GameType),
+    Mode = as.factor(Mode),
+    PrimaryWeapon = as.factor(PrimaryWeapon),
+    XPType = as.factor(XPType),
+    FullPartial = as.factor(FullPartial),
+    DidPlayerVote = as.factor(DidPlayerVote),
+    LimitReached = as.factor(LimitReached)
+  )
+```
+
+There are two different Double XP + 10%. 517 for one and one for the other. So we will merge those 2 as this is most likely a mistake when imputing the data.
+```{r}
+Joined_players2 <- Joined_players2 %>%
+  mutate(
+    XPType = fct_collapse(XPType,
+                          "Double XP + 10%" = c("Double XP + 10%", "Double XP + 10% "))
+  )
+```
+
+##### Multiple Linear Regression
+```{r}
+lm_xp <- lm(
+  TotalXP ~ Eliminations + Deaths + Score + Damage +
+            GameType + Mode + PrimaryWeapon + XPType +
+            FullPartial + DidPlayerVote + LimitReached,
+  data = Joined_players2
+)
+
+summary(lm_xp)
+```
+
+Due to the large number of missing values in the variables Confirms, Denies, Objectives, ObjectiveKills, Captures, Diffuses, Plants, Detonates, Deposits, Time_Sec, and Time_Min, these variables were excluded from the model to avoid loss of data. After running the multiple linear regression, then looking at the p-values denoted by the Pr(>|t|) column, it tells us which predictors are statistically significant predictors for TotalXP. The predictors that will be deemed statistically significant will have a p-value less than 0.05. The predictors that fit this are: Eliminations, Score, Damage, PrimaryWeaponMilano 821, PrimaryWeaponXM4, and XPTypeDouble XP + 10%. These results indicate that TotalXP is primarily driven by player performance metrics and XP multipliers.
+
+#### Of the predictors associated with the response, select one of the predictors and explain the relationship between the predictor and TotalXP.
+```{r}
+ggplot(Joined_players2, aes(x = XPType, y = TotalXP)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(
+    title = "Effect of XPType on TotalXP",
+    x = "XPType",
+    y = "TotalXP"
+  )
+```
+
+The boxplot clearly shows that matches with Double XP result in much higher TotalXP than standard matches. This confirms the model result that XPType is a strong driver of XP gains.
