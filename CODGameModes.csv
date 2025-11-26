@@ -1,0 +1,5 @@
+Mode,ScoreLimit,TimeLimit
+Domination,200,None
+Kill Confirmed,65,10 Minutes
+Hardpoint,250,5 Minutes
+TDM,100,10 Minutes
