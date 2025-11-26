@@ -1,0 +1,16 @@
+---
+title: "STAT_380_Final_Code"
+author: "Andrew Bartnikowski, Zachary Brown, Julian Grossman, Rowan Tolfree"
+date: "2025-11-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Front Matter - Clean Environment, Load Libraries, Read dataset
+
+```{r}
+rm(list = ls())
+```
