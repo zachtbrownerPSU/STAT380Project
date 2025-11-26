@@ -1,0 +1,251 @@
+Map1,Map2,Choice,MapVote,Date,FullPartial,Result,Eliminations,Deaths,Score,Damage,TotalXP,PrimaryWeapon,XPType,DidPlayerVote,GameType,Confirms,Denies,Objectives,ObjectiveKills,Captures,Diffuses,Plants,Detonates,Deposits,Time_Sec,Time_Min
+Yamantau,Collateral Strike,Collateral Strike,2 to 1,12/11/21,Full,189-250,22,25,3705,576,11699,MG 82,10% Boost,No,HC - Hardpoint,,,,9,,,,,,57,1
+Deprogram,Cartel,Deprogram,2 to 2,12/11/21,Full,202-250,20,25,2560,524,16068,MG 82,Double XP + 10%,No,HC - Hardpoint,,,,8,,,,,,35,1
+Yamantau,Miami Strike,Yamantau,0 to 0,12/11/21,Full,250-11,7,5,1875,182,13194,MG 82,Double XP + 10%,No,HC - Hardpoint,,,,4,,,,,,8,2
+,,Amerika,,12/11/21,Full,250-202,15,24,2405,383,19936,MG 82,Double XP + 10%,No,HC - Hardpoint,,,,1,,,,,,40,1
+Moscow,Drive-In,Moscow,1 to 0,12/11/21,Full,224-250,22,30,2520,567,19138,MG 82,Double XP + 10%,No,HC - Hardpoint,,,,14,,,,,,4,1
+Crossroads Strike,Express,Express,2 to 1,12/11/21,Full,250-165,24,16,3810,673,25559,MG 82,Double XP + 10%,No,HC - Hardpoint,,,,6,,,,,,4,1
+Raid,Diesel,Raid,2 to 1,12/11/21,Full,250-137,28,14,2940,719,22369,MG 82,Double XP + 10%,No,HC - Hardpoint,,,,10,,,,,,9,2
+The Pines,Miami Strike,Miami Strike,3 to 2,12/11/21,Full,,,,,,,,,No,HC - Hardpoint,,,,,,,,,,,
+,,Crossroads Strike,,12/12/21,Partial,250-134,13,6,960,334,11270,MG 82,10% Boost,No,HC - Hardpoint,,,,1,,,,,,9,0
+Yamantau,Collateral Strike,Collateral Strike,2 to 1,12/12/21,Full,100-86,13,16,2205,364,25263,MG 82,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Cartel,Zoo,Zoo,3 to 0,12/12/21,Full,74-89,11,21,1585,319,6761,MG 82,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Apocalypse,,12/12/21,Full,200-161,19,33,3215,558,14723,RPD,10% Boost,No,HC - Domination,,,12,5,7,,,,,,
+Armada Strike,Crossroads Strike,Crossroads Strike,4 to 1,12/12/21,Full,181-200,26,34,4160,620,18693,RPD,Double XP + 10%,No,HC - Domination,,,25,17,5,,,,,,
+Yamantau,Rush,Rush,3 to 1,12/12/21,Full,170-200,24,25,3095,672,24429,RPD,Double XP + 10%,No,HC - Domination,,,11,8,3,,,,,,
+Garrison,Express,Garrison,1 to 0,12/13/21,Full,100-72,24,13,4020,686,23191,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Zoo ,Collateral Strike,Zoo,2 to 2,12/13/21,Full,100-94,17,12,2915,454,18093,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Apocalypse,The Pines,Apocalypse,2 to 2,12/13/21,Full,100-98,26,15,6305,736,24934,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Yamantau,Standoff,Standoff,2 to 0,12/13/21,Full,100-82,10,16,1425,286,16699,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Echelon,Apocalypse,Apocalypse,3 to 0,12/14/21,Full,133-250,16,21,3270,448,10564,RPD,10% Boost,No,HC - Hardpoint,,,11,5,1,,,,,,
+Slums,Hijacked,Slums,3 to 0,12/14/21,Full,250-131,12,22,2585,290,16958,RPD,Double XP + 10%,No,HC - Hardpoint,,,4,30,1,,,,,,
+,,Riad,,12/17/21,Partial,100-63,11,14,1695,309,10670,RPD,10% Boost,No,HC - TDM,,,,,,,,,,,
+Express,Crossroads Strike,Crossroads Strike,2 to 1,12/17/21,Full,100-65,22,8,4780,601,10989,RPD,10% Boost,No,HC - TDM,,,,,,,,,,,
+Zoo ,Deprogram,Zoo,2 to 0,12/17/21,Full,100-96,15,13,2350,432,17533,RPD,10% Boost,No,HC - TDM,,,,,,,,,,,
+Echelon,Satellite,Satellite,2 to 0,12/17/21,,,,,,,,,,No,HC - TDM,,,,,,,,,,,
+,,Collateral Strike,,12/21/21,Partial,81-100,27,13,6280,755,26563,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Drive-In,Yamantau,Drive-In,4 to 1,12/21/21,,,,,,,,,,No,HC - TDM,,,,,,,,,,,
+Express,Raid,Raid,3 to 1,12/21/21,Full,76-100,16,21,2025,427,9405,RPD,10% Boost,No,HC - TDM,,,,,,,,,,,
+The Pines,Drive-In,The Pines,3 to 0,12/21/21,Full,86-91,22,13,4535,654,17919,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Miami Strike,Standoff,Miami Strike,3 to 1,12/21/21,Full,100-75,26,13,5550,728,16687,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Apocalypse,,12/21/21,Partial,92-100,3,10,550,84,8519,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Slums,Zoo,Slums,3 to 1,12/21/21,Full,77-100,15,18,2440,410,5977,RPD,10% Boost,No,HC - TDM,,,,,,,,,,,
+Rush,Diesel,Diesel,2 to 0,12/21/21,Full,100-67,28,13,4540,807,9630,RPD,10% Boost,No,HC - TDM,,,,,,,,,,,
+Cartel,Zoo,Cartel,3 to 0,12/23/21,Full,100-84,20,14,3895,559,18610,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Echelon,Collateral Strike,Echelon,2 to 2,12/23/21,Full,49-100,5,24,500,158,11104,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Armada Strike,Yamantau,Yamantau,3 to 1,12/23/21,Full,100-99,18,15,3585,506,19338,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Hijacked,,12/23/21,Partial,250-138,8,13,1765,207,15124,RPD,Double XP + 10%,No,HC - Hardpoint,,,,5,,,,,,10,2
+The Pines,Diesel,Diesel,4 o 0,12/23/21,Full,250-121,17,11,2520,480,15568,RPD,Double XP + 10%,No,HC - Hardpoint,,,,13,,,,,,23,2
+,,The Pines,,12/23/21,Partial,239-250,21,25,2875,589,20230,RPD,Double XP + 10%,No,HC - Hardpoint,,,,9,,,,,,20,1
+Checkmate,Garrison,Garrison,2 to 1,12/23/21,Full,250-101,8,13,1505,189,10792,RPD,Double XP + 10%,No,HC - Hardpoint,,,,3,,,,,,3,2
+,,Hijacked,,12/23/21,Full,52-250,15,24,2040,383,14424,RPD,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,22,0
+,,Echelon,,12/24/21,Partial,74-250,3,12,335,90,7861,RPD,Double XP + 10%,No,HC - Hardpoint,,,,0,,,,,,29,0
+Armada Strike,Miami Strike,Armada Strike,1 to 1,12/24/21,Full,236-250,9,26,2185,230,12485,RPD,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,28,2
+Express,Standoff,Express,1 to 0,12/24/21,,,,,,,,,,No,HC - Hardpoint,,,,,,,,,,,
+,,Standoff,,12/24/21,Partial,77-100,6,6,850,168,7566,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Diesel,Apocalypse,Apocalypse,3 to 2,12/24/21,Full,89-100,23,12,5035,619,26954,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Moscow,Yamantau,Yamantau,4 to 0,12/24/21,Full,74-100,13,18,2695,337,16423,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Crossroads Strike,Slums,Crossroads Strike,2 to 1,12/24/21,Full,97-100,24,16,5630,632,13437,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Checkmate,Yamantau,Yamantau,1 to 0,12/24/21,Full,95-100,20,16,4045,560,18855,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Armada Strike,Cartel,Cartel,3 to 1,12/24/21,Full,56-62,10,11,2225,279,12730,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Express,Drive-In,Express,3 to 1,12/24/21,Full,94-100,13,10,2185,364,10472,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Apocalypse,Zoo,Apocalypse,6 to 0,12/24/21,Full,100-96,13,16,2735,342,14155,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Rush,Diesel,Diesel,5 to 1,12/24/21,,,,,,,,,,No,HC - TDM,,,,,,,,,,,
+Drive-In,Express,Drive-In,5 to 1,12/25/21,Full,91-91,18,14,3980,491,21894,RPD,Double XP + 10% ,No,HC - TDM,,,,,,,,,,,
+The Pines,Moscow,The Pines,2 to 2,12/25/21,Full,97-87,12,12,2450,336,15041,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Checkmate,Rush,Checkmate,2 to 1,12/25/21,Full,100-90,16,14,3275,446,23301,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Slums,Hijacked,Slums,2 to 2,12/25/21,Full,100-87,16,17,3870,446,20257,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Cartel,Garrison,Cartel,3 to 1,12/25/21,Full,62-86,7,18,1345,196,11272,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Apocalypse,Checkmate,Checkmate,2 to 0,12/25/21,Full,83-71,9,16,1165,261,14219,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Express,Deprogram,Express,3 to 2,12/25/21,Full,92-100,19,15,3710,501,15101,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Miami Strike,Apocalypse,Miami Strike,1 to 0,12/25/21,Full,100-58,13,2,4055,344,10031,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Amerika,The Pines,The Pines,1 to 0,12/25/21,Full,84-89,23,15,4295,644,17503,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Deprogram,,12/25/21,Full,100-91,8,15,1135,231,13538,RPD,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Hijacked,,1/1/22,Partial,250-227,11,17,1740,285,13453,M60,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,15,1
+Express,Deprogram,Express,1 to 1,1/1/22,Full,250-166,23,17,3465,607,19672,M60,Double XP + 10%,No,HC - Hardpoint,,,,9,,,,,,54,1
+Checkmate,Cartel,Checkmate,3 to 0,1/1/22,Full,184-250,28,26,4210,738,41163,M60,Double XP + 10%,No,HC - Hardpoint,,,,8,,,,,,43,0
+,,Cartel,,1/1/22,Partial,128-250,5,15,1055,140,7197,Pellington,Double XP + 10%,No,HC - Hardpoint,,,,3,,,,,,30,0
+Moscow,Yamantau,Moscow,0 to 0,1/1/22,Full,149-250,11,24,1715,307,13331,Pellington,Double XP + 10%,No,HC - Hardpoint,,,,8,,,,,,13,0
+Raid,Zoo,Raid,4 to 0,1/1/22,Full,250-203,14,21,2075,399,16124,Pellington,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,16,2
+,,Armada Strike,,1/1/22,Full,250-236,34,17,6205,868,37162,Pellington,Double XP + 10%,No,HC - Hardpoint,,,,19,,,,,,44,1
+Crossroads Strike,Armada Strike,Crossroads Strike,2 to 1,1/1/22,Full,250-56,7,11,1855,186,9574,Pellington,Double XP + 10%,No,HC - Hardpoint,,,,5,,,,,,19,1
+,,Zoo,,1/2/22,Partial,63-51,1,9,255,58,3060,Pellington,Double XP + 10%,No,HC - Kill Confirmed,1,2,3,,,,,,,,
+Rush,Deprogram,Rush,2 to 1,1/2/22,Full,65-46,5,12,610,138,9253,Pellington,Double XP + 10%,No,HC - Kill Confirmed,4,4,8,,,,,,,,
+,,Yamantau,,1/2/22,Full,47-65,5,22,965,157,9394,Pellington,Double XP + 10%,No,HC - Kill Confirmed,5,6,11,,,,,,,,
+Hijacked,Satellite,Hijacked,2 to 1,1/2/22,Full,100-83,12,15,1295,323,14756,Pellington,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Crossroads Strike,Standoff,Crossroads Strike,3 to 3,1/2/22,Full,89-100,9,16,975,247,9736,Pellington,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Armada Strike,,1/2/22,Partial,85-73,6,14,1510,168,10882,Pellington,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Standoff,Yamantau,Standoff,4 to 0,1/2/22,Full,84-100,10,20,1260,251,16144,Pellington,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Slums,,1/2/22,Full,71-100,12,19,975,322,15198,Pellington,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Echelon,,1/2/22,Partial,63-100,3,8,605,84,7750,Pellington,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Amerika,Checkmate,Checkmate,2 to 1,1/2/22,Full,100-58,11,14,1535,252,25189,Pellington,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Slums,Raid,Raid,2 to 1,1/2/22,Full,79-100,12,17,2350,335,12292,Pellington,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Nuketown '84,Drive-In,Nuketown '84,4 to 2,1/2/22,Full,100-55,21,8,4085,566,14720,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Miami Strike,Rush,Rush,2 to 0,1/2/22,Full,37-100,12,17,2280,325,10401,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Crossroads Strike,Yamantau,Crossroads Strike,4 to 3,1/2/22,Full,100-42,19,7,3905,530,10645,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Moscow,Drive-In,Drive-In,5 to 0,1/2/22,Full,100-87,23,16,3510,582,21373,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Standoff,Deprogram,Standoff,2 to 1,1/2/22,Full,100-71,16,13,2660,432,21444,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+The Pines,Garrison,The Pines,3 to 1,1/2/22,Full,84-100,16,20,2760,425,17822,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Miami Strike,Rush,Miami Strike,1 to 0,1/2/22,Full,100-94,26,10,7195,728,23561,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Cartel,Echelon,Cartel,2 to 1,1/2/22,,,,,,,,,,No,HC - TDM,,,,,,,,,,,
+,,Diesel,,1/2/22,Full,100-79,24,11,4030,666,19190,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Standoff,Echelon,Standoff,4 to 0,1/2/22,Full,77-100,14,18,2120,388,13910,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Zoo ,Satellite,Zoo,2 to 1,1/2/22,Full,100-57,21,11,3810,561,18220,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Satellite,,1/2/22,Partial,250-67,5,4,400,127,4917,AK-47,Double XP + 10%,No,HC - Hardpoint,,,,3,,,,,,8,0
+Moscow,Zoo,Moscow,1 to 0,1/2/22,Full,161-250,30,20,5835,792,31894,AK-47,Double XP + 10%,No,HC - Hardpoint,,,,19,,,,,,16,1
+Slums,Apocalypse,Slums,3 to 0,1/2/22,Full,97-250,19,18,3845,549,14298,AK-47,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,41,0
+Armada Strike,Standoff,Standoff,2 to 0,1/2/22,Full,250-101,8,16,1875,224,11421,AK-47,Double XP + 10%,No,HC - Hardpoint,,,,4,,,,,,14,2
+Collateral Strike,Deprogram,Collateral Strike,2 to 0,1/2/22,Full,237-250,23,25,4075,617,25091,AK-47,Double XP + 10%,No,HC - Hardpoint,,,,8,,,,,,21,1
+Crossroads Strike,Raid,Crossroads Strike,2 to 2,1/2/22,Full,38-250,9,19,1190,252,12904,AK-47,Double XP + 10%,No,HC - Hardpoint,,,,3,,,,,,25,0
+Yamantau,Garrison,Yamantau,3 to 0,1/2/22,Full,250-66,20,17,3140,532,16034,AK-47,Double XP + 10%,No,HC - Hardpoint,,,,5,,,,,,7,2
+Express,Drive-In,Drive-In,2 to 0,1/4/22,Full,250-208,27,23,4830,757,27373,AUG,Double XP + 10%,No,HC - Hardpoint,,,,21,,,,,,9,3
+Collateral Strike,Checkmate,Checkmate,4 to 2,1/4/22,Full,250-173,26,29,3680,672,14594,AUG,10% Boost,No,HC - Hardpoint,,,,16,,,,,,49,1
+,,Standoff,,1/5/22,Partial,250-179,7,8,1000,182,11349,AUG ,10% Boost,No,HC - Hardpoint,,,,3,,,,,,13,1
+Echelon,Zoo,Echelon,3 to 3,1/5/22,Full,250-24,9,8,1570,227,8031,AUG ,10% Boost,No,HC - Hardpoint,,,,4,,,,,,27,1
+Nuketown '84,Armada Strike,Nuketown '84,2 to 0,1/5/22,Full,240-234,39,38,5865,1040,31190,AUG ,Double XP + 10%,No,HC - Hardpoint,,,,14,,,,,,51,1
+,,Hijacked,,1/7/22,Partial,100-90,18,8,4385,493,13188,AUG,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Garrison,,1/7/22,Partial,108-250,16,16,2495,447,12321,AUG,10% Boost,No,HC - Hardpoint,,,,4,,,,,,5,1
+Collateral Strike,Rush,Collateral Strike,0 to 0,1/8/22,Full,39-250,14,19,1610,364,15805,AUG,Double XP + 10%,No,HC - Hardpoint,,,,12,,,,,,21,0
+Checkmate,Slums,Slums,6 to 0,1/8/22,Full,168-250,18,29,1870,197,14160,AUG,Double XP + 10%,No,HC - Hardpoint,,,,5,,,,,,32,1
+Drive-In,Deprogram,Drive-In,3 to 0,1/8/22,Full,250-149,19,27,2725,499,12335,AUG,10% Boost,No,HC - Hardpoint,,,,11,,,,,,17,1
+Express,Miami Strike,Miami Strike,5 to 1,1/14/22,Full,197-250,27,21,4110,695,31085,AUG,Double XP + 10%,No,HC - Hardpoint,,,,15,,,,,,49,1
+Checkmate,Apocalypse,Checkmate,1 to 0,1/14/22,Full,250-209,25,26,4685,653,26089,AUG,Double XP + 10%,No,HC - Hardpoint,,,,19,,,,,,16,3
+,,Express,,1/14/22,Full,227-250,22,27,3780,572,22605,AUG,Double XP + 10%,No,HC - Hardpoint,,,,13,,,,,,38,2
+,,Diesel,,1/14/22,Partial,250-149,19,19,2905,525,33786,AUG,Double XP + 10%,No,HC - Hardpoint,,,,6,,,,,,11,1
+Moscow,Deprogram,Deprogram,1 to 0,1/14/22,,,,,,,,,,No,HC - Hardpoint,,,,,,,,,,,
+,,Standoff,,1/14/22,Full,250-215,19,26,2225,461,21726,AUG,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,59,0
+Miami Strike,Apocalypse,Apocalypse,2 to 0,1/14/22,Full,118-250,20,28,2280,473,14561,AUG,Double XP + 10%,No,HC - Hardpoint,,,,11,,,,,,22,0
+Moscow,Rush,Rush,3 to 0,1/14/22,Full,250-171,12,18,1930,320,18540,AUG,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,7,2
+,,Drive-In,,1/15/22,Partial,196-250,9,26,1695,217,15865,AUG,Double XP + 10%,No,HC - Hardpoint,,,,5,,,,,,38,1
+The Pines,Yamantau,Yamantau,3 to 0,1/15/22,Full,250-157,20,24,2725,559,17044,AUG,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,6,2
+,,Miami Strike,,1/15/22,Partial,68-100,14,12,2820,392,14050,AUG,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Satellite,,1/15/22,Full,98-96,30,15,6315,802,24761,AUG,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Armada Strike,,1/16/22,Full,100-64,15,10,3085,419,20384,AUG,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Zoo,Nuketown '84,Nuketown '84,3 to 1,1/16/22,Full,100-35,12,3,2550,322,9041,AUG,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Garrison,Moscow,Garrison,2 o 0,1/16/22,Full,46-100,11,22,2505,339,12403,AUG,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Miami Strike,Express,Express,4 to 3,1/16/22,Full,100-83,13,13,2010,354,15312,AUG,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Nuketown '84,Miami Strike,Miami Strike,4 to 1,1/16/22,Full,200-135,17,21,3635,479,21065,AUG,Double XP + 10%,No,HC - Domination,,,18,8,10,,,,,,
+Hijacked,Crossroads Strike,Crossroads Strike,3 to 1,1/16/22,Full,179-200,23,28,4655,604,20323,AUG,Double XP + 10%,No,HC - Domination,,,24,13,11,,,,,,
+,,Armada Strike,,1/17/22,Full,250-95,20,18,2300,549,22143,AUG,Double XP + 10%,No,HC - Hardpoint,,,,9,,,,,,7,2
+,,Crossroads Strike,,1/17/22,Full,250-166,15,31,2985,351,15371,AUG,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,0,2
+Zoo,The Pines,Zoo,2 to 0,1/17/22,Full,150-250,13,33,2205,377,14000,AUG,Double XP + 10%,No,HC - Hardpoint,,,,3,,,,,,2,1
+Slums,Drive-In,Drive-In,2 to 0,1/17/22,Full,250-104,17,17,2350,470,22907,AUG,Double XP + 10%,No,HC - Hardpoint,,,,8,,,,,,23,1
+Checkmate,Amerika,Checkmate,1 to 0,1/17/22,Full,250-89,14,14,2680,381,17221,AUG,Double XP + 10%,No,HC - Hardpoint,,,,11,,,,,,34,2
+Standoff,Crossroads Strike,Crossroads Strike,3 to 1,1/17/22,Full,100-86,17,17,3350,488,13315,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Echelon,Cartel,Cartel,3 to 2,1/17/22,Full,76-53,13,9,2550,348,22765,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Checkmate,Rush,Checkmate,3 to 1,1/17/22,Full,86-91,24,17,4995,657,19759,AK-47,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Amerika,,1/29/22,Partial,100-86,7,11,1415,195,4083,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Armada Strike,Collateral Strike,Armada Strike,3 to 1,1/29/22,Full,100-91,17,15,2920,420,9285,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Amerika,,1/29/22,Partial,99-100,10,12,2570,227,7029,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Raid ,Express,Raid,1 to 1,1/29/22,Full,95-100,21,16,8710,545,17454,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Yamantau,Amerika,Yamantau,1 to 1,1/30/22,Full,250-196,42,17,8705,1124,14541,Groza,10% Boost,No,HC - Hardpoint,,,,30,,,,,,14,3
+Garrison,Moscow,Moscow,4 to 1,1/30/22,Full,250-44,13,5,3845,363,15442,Groza,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,45,2
+Moscow,Cartel,Moscow,1 to 1,1/30/22,Full,89-100,12,21,2030,335,20958,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+The Pines,Echelon,Echelon,3 to 2,2/2/22,Full,100-91,18,19,2630,488,9519,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Standoff,,2/4/22,Full,100-54,21,6,3285,588,9211,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Slums,Raid,Raid,5 to 1,2/4/22,Full,100-68,13,11,2820,364,11712,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Express,Checkmate,Express,1 to 0,2/4/22,Full,95-99,16,18,2250,424,8920,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Moscow,Hijacked,Hijacked,4 to 1,2/4/22,Full,100-82,6,13,1590,168,5624,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Moscow,The Pines,The Pines,1 to 0,2/5/22,Full,182-250,28,26,3550,728,19902,Groza,Double XP + 10%,No,HC - Hardpoint,,,,15,,,,,,0,2
+Slums,Apocalypse,Slums,0 to 0,2/5/22,Full,250-185,16,17,3070,425,19489,Groza,Double XP + 10%,No,HC - Hardpoint,,,,14,,,,,,55,2
+Echelon,Checkmate,Checkmate,4 to 2,2/5/22,Full,88-99,16,20,2405,472,19675,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Echelon,Express,Express,2 to 0,2/6/22,Full,100-89,15,6,4500,401,16139,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Zoo,Echelon,Zoo,1 to 1,2/6/22,Full,100-60,18,10,2765,528,11255,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Yamantau,Garrison,Yamantau,1 to 0,2/6/22,Full,250-87,20,15,2975,513,9805,Groza,10% Boost,No,HC - Hardpoint,,,,14,,,,,,42,2
+,,Echelon,,2/7/22,Full,90-90,15,18,1740,419,8462,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Armada Strike,,2/8/22,Full,100-52,21,8,3295,587,13916,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Slums,Cartel,Slums,3 to 0,2/9/22,Partial,72-100,11,21,1305,282,8328,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Rush,The Pines,Rush,2 to 1,2/9/22,Full,100-78,18,11,3225,503,9108,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Garrison,Collateral Strike,Collateral Strike,2 to 1,2/13/22,Full,69-100,10,23,1900,280,8061,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Deprogram,Echelon,Deprogram,3 to 1,2/16/22,Full,250-88,14,23,1920,390,11058,Groza,10% Boost,No,HC - Hardpoint,,,,4,,,,,,49,1
+Hijacked,Satellite,Satellite,3 to 2,2/16/22,Full,169-250,27,16,3755,780,8774,Groza,10% Boost,No,HC - Hardpoint,,,,17,,,,,,26,2
+The Pines,Moscow,The Pines,4 to 0,2/16/22,Full,133-250,21,24,2100,556,8828,Groza,10% Boost,No,HC - Hardpoint,,,,9,,,,,,42,0
+,,Standoff,,2/19/22,Partial,51-250,7,2,1425,170,5846,Groza,10% Boost,No,HC - Hardpoint,,,,5,,,,,,30,0
+Raid,Amerika,Raid,3 to 0,2/19/22,Full,250-140,20,18,3355,518,16412,Groza,Double XP + 10%,No,HC - Hardpoint,,,,10,,,,,,31,2
+Echelon,Crossroads Strike,Crossroads Strike,1 to 0,2/21/22,Full,250-230,16,26,2355,459,14786,Groza,10% Boost,No,HC - Hardpoint,,,,8,,,,,,26,2
+The Pines,Zoo,The Pines,2 to 2,2/21/22,Full,250-104,9,22,1865,210,6469,Groza,10% Boost,No,HC - Hardpoint,,,,7,,,,,,25,2
+,,Slums,,3/1/22,Full,192-250,25,22,3395,639,14715,Groza,10% Boost,No,HC - Hardpoint,,,,10,,,,,,4,2
+,,Amerika,,3/3/22,Partial,189-250,21,24,3045,560,13541,Groza,10% Boost,No,HC - Hardpoint,,,,6,,,,,,48,0
+Cartel,Deprogram,Cartel,1 to 1,3/3/22,Full,250-234,21,25,3065,589,12207,Groza,10% Boost,No,HC - Hardpoint,,,,14,,,,,,38,2
+Checkmate,Zoo,Checkmate,4 to 1,3/3/22,Full,250-36,18,11,2945,482,15657,Groza,Double XP + 10%,No,HC - Hardpoint,,,,7,,,,,,42,2
+Cartel,The Pines,Cartel,2 to 1,3/5/22,Full,250-128,30,19,4380,826,20850,Groza,10% Boost,No,HC - Hardpoint,,,,15,,,,,,43,2
+,,Miami Strike,,3/5/22,Full,250-202,20,24,2795,557,8059,Groza,10% Boost,No,HC - Hardpoint,,,,9,,,,,,25,2
+Drive-In,Cartel,Drive-In,0 to 0,3/5/22,Full,250-43,13,15,1535,324,9122,Groza,10% Boost,No,HC - Hardpoint,,,,7,,,,,,48,1
+Apocalypse,Miami Strike,Miami Strike,2 to 0,3/5/22,Full,190-250,10,23,2070,281,8255,Groza,10% Boost,No,HC - Hardpoint,,,,4,,,,,,44,1
+Slums,Amerika,Slums,1 to 0,3/6/22,Full,56-250,17,17,2530,471,8273,Groza,10% Boost,No,HC - Hardpoint,,,,9,,,,,,49,0
+Cartel,Moscow,Cartel,0 to 0,3/6/22,Full,114-250,23,22,3320,621,8950,Groza,10% Boost,No,HC - Hardpoint,,,,10,,,,,,49,0
+,,Standoff,,3/7/22,Partial,125-250,6,9,510,168,5074,Groza,10% Boost,No,HC - Hardpoint,,,,2,,,,,,24,0
+Deprogram,Collateral Strike,Collateral Strike,1 to 0,3/12/22,Full,250-73,23,13,3505,614,10908,Groza,10% Boost,No,HC - Hardpoint,,,,5,,,,,,0,1
+,,Satellite,,3/12/22,Full,250-150,29,18,3435,811,11365,Groza,10% Boost,No,HC - Hardpoint,,,,8,,,,,,42,1
+,,Crossroads Strike,,3/12/22,Full,250-130,17,21,3805,466,18691,Groza,Double XP + 10%,No,HC - Hardpoint,,,,2,,,,,,31,1
+,,Nuketown '84,,3/12/22,Full,65-58,19,21,3400,505,10703,Groza,10% Boost,No,HC - Kill Confirmed,12,9,21,,,,,,,,
+,,Cartel,,3/12/22,Full,46-31,15,7,3480,419,17533,Groza,Double XP + 10%,No,HC - Kill Confirmed,13,4,17,,,,,,,,
+,,Garrison,,3/12/22,Partial,54-45,13,9,2455,364,9142,Groza,10% Boost,No,HC - Kill Confirmed,14,1,15,,,,,,,,
+Diesel,The Pines,The Pines,3 to 2,3/12/22,Full,41-65,6,17,1105,148,6105,Groza,10% Boost,No,HC - Kill Confirmed,5,4,9,,,,,,,,
+,,Collateral Strike,,3/14/22,Partial,42-57,5,22,1475,139,4174,Groza,10% Boost,No,HC - Kill Confirmed,2,8,10,,,,,,,,
+Apocalypse,Satellite,Apocalypse,0 to 0,3/14/22,Full,65-45,18,16,2650,504,10502,Groza,10% Boost,No,HC - Kill Confirmed,11,2,13,,,,,,,,
+Miami Strike,Satellite,Miami Strike,1 to 1,3/15/22,Full,50-65,18,15,2790,504,9945,Groza,10% Boost,No,HC - Kill Confirmed,12,3,15,,,,,,,,
+,,WMD,,3/17/22,Full,100-70,30,15,4395,833,13770,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Amerika,Moscow,Amerika,1 to 1,3/19/22,Full,41-65,9,18,2235,252,9745,Groza,10% Boost,No,HC - Kill Confirmed,6,4,10,,,,,,,,
+Hijacked,Express,Hijacked,2 to 1,3/19/22,Full,88-100,10,15,1645,290,5607,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Yamantau,Raid,Raid,5 to 0,3/19/22,Full,68-100,13,17,1995,371,5810,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Drive-In,Nuketown '84,Drive-In,1 to 1,3/19/22,Full,87-100,17,25,2125,470,7476,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+The Pines,Cartel,Cartel,3 to 1,3/19/22,Full,47-69,14,10,1945,391,6914,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Cartel,Diesel,Diesel,3 to 0,3/19/22,Full,100-75,27,18,5710,754,13940,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Crossroads Strike,Amerika,Crossroads Strike,2 to 2,3/19/22,Full,97-100,22,16,4840,596,6319,Groza,10% Boost,No,HC - TDM,,,,,,,,,,,
+Drive-In,Yamantau,Drive-In,3 to 0,3/19/22,Full,95-100,19,18,2700,532,15888,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Express,Apocalypse,Express,4 to 2,3/19/22,Full,97-100,12,18,1890,354,12037,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+The Pines,Zoo,The Pines,4 to 2,3/19/22,Full,87-84,15,21,2780,446,11392,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Amerika,Rush,Amerika,3 to 1,3/19/22,Full,97-100,25,17,4365,689,21029,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Moscow,Cartel,Moscow,3 to 1,3/19/22,Full,100-70,26,14,4450,701,22445,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+The Pines,Deprogram,The Pines,1 to 0,3/19/22,Full,100-76,27,15,6110,733,20920,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Diesel,Cartel,Diesel,3 to 1,3/19/22,Full,100-62,18,10,3535,500,15102,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Yamantau,Collateral Strike,Yamantau,2 to 0,3/19/22,Full,100-90,24,22,4795,694,40459,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Moscow,Crossroads Strike,Crossroads Strike,4 to 0,3/19/22,Full,85-100,17,23,2540,390,9823,Groza,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Nuketown '84,Miami Strike,Nuketown '84,4 to 4,3/22/22,Full,93-100,18,19,3635,515,5875,AK-47,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Express,,3/23/22,Partial,100-94,9,11,1045,251,7125,AK-47,10% Boost,No,HC - TDM,,,,,,,,,,,
+Amerika,Deprogram,Amerika,2 to 1,3/25/22,Full,100-63,9,17,1615,252,10876,AK-47,10% Boost,No,HC - TDM,,,,,,,,,,,
+Drive-In,Raid,Raid,5 to 1,3/27/22,Full,100-91,17,11,3965,418,10830,AK-47,10% Boost,No,HC - TDM,,,,,,,,,,,
+The Pines,Collateral Strike,The Pines,3 to 1,3/27/22,Full,250-148,16,20,1720,448,13272,M16,10% Boost,No,HC - Hardpoint,,,,10,,,,,,41,1
+Crossroads Strike,Satellite,Crossroads Strike,1 to 0,3/27/22,Full,250-220,26,32,4380,697,11111,M16,10% Boost,No,HC - Hardpoint,,,,12,,,,,,23,2
+,,Checkmate,,3/31/22,Partial,63-250,7,6,765,196,3028,M16,10% Boost,No,HC - Hardpoint,,,,3,,,,,,20,0
+Diesel,Slums,Slums,3 to 1,3/31/22,Full,250-162,14,25,1905,325,9595,M16,10% Boost,No,HC - Hardpoint,,,,8,,,,,,42,1
+Collateral Strike,Yamantau,Yamantau,3 to 2,3/31/22,Full,250-205,15,27,2175,393,9107,M16,10% Boost,No,HC - Hardpoint,,,,4,,,,,,53,1
+,,Apocalypse,,4/2/22,Partial,250-161,9,12,1965,229,7816,M16,10% Boost,No,HC - Hardpoint,,,,8,,,,,,5,1
+Echelon,Zoo,Zoo,3 to 1,4/2/22,Partial,93-72,20,14,3465,430,9005,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Collateral Strike,,4/2/22,Full,88-100,22,14,4350,604,9227,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Yamantau,,4/2/22,Full,178-200,10,35,2345,287,10035,M16,10% Boost,No,HC - Domination,,,6,1,5,,,,,,
+,,Deprogram,,4/2/22,Full,189-200,12,31,1715,325,7317,M16,10% Boost,No,HC - Domination,,,15,10,5,,,,,,
+Garrison,Rush,Rush,2 to 0,4/2/22,Full,200-139,12,25,2005,325,8245,M16,10% Boost,No,HC - Domination,,,9,3,6,,,,,,
+Hijacked,Deprogram,Hijacked,2 to 1,4/6/22,Full,100-92,20,17,3680,544,12931,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Standoff,,4/7/22,Partial,63-250,2,8,450,57,4993,M16,10% Boost,No,HC - Hardpoint,,,1,14,0,,,,,,
+Checkmate,Raid,Raid,3 to 1,4/7/22,Full,204-250,14,33,1745,361,6890,M16,10% Boost,No,HC - Hardpoint,,,8,58,1,,,,,,
+Collateral Strike,Deprogram,Collateral Strike,1 to 0,4/24/22,Full,100-88,22,13,3120,615,13493,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Diesel,Standoff,Standoff,2 to 0,4/24/22,Full,100-82,22,10,4745,599,12052,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Zoo,Amerika,Amerika,4 to 2,4/24/22,Full,90-100,18,18,4225,505,15986,M16,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Slums,Crossroads Strike,Slums,2 to 0,4/24/22,Full,63-100,16,17,2540,405,8822,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Garrison,Express,Express,4 to 1,4/24/22,Full,100-89,29,12,7415,811,22623,M16,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Zoo,Yamantau,Zoo,3 to 1,4/24/22,Full,100-61,21,8,4330,534,22964,M16,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Diesel,Miami Strike,Diesel,3 to 0,4/24/22,Full,100-94,8,14,1450,171,16105,M16,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Apocalypse,Collateral Strike,Apocalypse,3 to 3,4/24/22,Full,74-100,11,14,2570,308,12784,M16,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Moscow,WMD,Moscow,2 to 2,4/24/22,Full,73-99,12,17,2430,310,17372,M16,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+,,Miami Strike,,4/26/22,Full,99-100,23,15,6085,620,7611,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Zoo,Express,Zoo,2 to 2,4/26/22,Full,72-100,18,13,3390,492,11484,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Diesel,The Pines,Diesel,3 to 1,4/26/22,Full,98-100,21,18,5060,565,17446,M16,Double XP + 10%,No,HC - TDM,,,,,,,,,,,
+Nuketown '84,Hijacked,Nuketown '84,2 to 0,4/26/22,Full,74-100,22,20,4240,600,12650,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Slums,Satellite,Slums,5 to 0,4/26/22,Full,100-98,18,16,3660,435,8659,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Cartel,,4/27/22,Full,74-67,18,10,4490,477,15278,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Drive-In,The Pines,The Pines,3 to 1,4/27/22,Full,70-100,4,18,450,88,4714,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Standoff,Miami Strike,Standoff,3 to 1,4/30/22,Full,100-90,11,11,1890,303,6984,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Moscow,Echelon,Moscow,3 to 3,4/30/22,Full,77-80,11,22,1505,308,8532,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Raid,Collateral Strike,Raid,2 to 0,4/30/22,Full,89-93,17,16,3375,476,8594,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Slums,Garrison,Slums,2 to 0,5/5/22,Full,66-100,8,19,1550,224,10923,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Nuketown '84,Yamantau,Nuketown '84,4 to 1,5/5/22,Full,100-96,16,12,3075,447,6827,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Checkmate,Amerika,Amerika,3 to 0,5/7/22,Full,100-87,14,17,2370,359,11089,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Hijacked,Echelon,Hijacked,1 to 0,5/7/22,Full,100-72,26,9,5465,728,11672,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Standoff,,5/7/22,Partial,100-93,12,11,1875,323,8509,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+,,Deprogram,,5/8/22,Full,100-88,12,8,2730,336,7486,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Jungle,Raid,Jungle,4 to 1,5/8/22,Full,82-100,12,18,2280,336,8342,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Diesel,Miami Strike,Diesel,6 to 2,5/9/22,Full,100-69,15,11,2630,404,9897,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Cartel,Deprogram,Cartel,3 to 3,5/11/22,Full,76-77,11,13,1780,305,9234,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
+Amerika,Yamantau,Amerika,2 to 0,5/11/22,Full,100-72,18,8,3895,503,10365,M16,10% Boost,No,HC - TDM,,,,,,,,,,,
