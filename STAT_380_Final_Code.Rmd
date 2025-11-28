@@ -191,5 +191,20 @@ ggplot(Joined_players2, aes(x = XPType, y = TotalXP)) +
 The boxplot clearly shows that matches with Double XP result in much higher TotalXP than standard matches. This confirms the model result that XPType is a strong driver of XP gains.
 
 ## Task 3 Prediction
+### Research Question: What are the best predictors for classifying game mode?
 
+### Classification Method 1: KNN
+```{r}
+
+```
+
+### Classification Method 2: Random Forests
+```{r}
+
+```
+
+### Classification Method 3: ----
+```{r}
+
+```
 
