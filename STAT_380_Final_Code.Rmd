@@ -24,18 +24,18 @@ library(forcats)
 Load in our data sets
 ```{r}
 Modes <- read.csv("CODGameModes.csv")
-Player1 <- read.csv("CODGames_p1_380.csv")
-Player2 <- read.csv("CODGames_p2_380.csv")
+Player1_raw <- read.csv("CODGames_p1_380.csv")
+Player2_raw <- read.csv("CODGames_p2_380.csv")
 ```
 
 ## Task 1 -- Exploratory Analysis
 
 Remove hardcore indicators in a separate column to prepare the data for a join on the COD game modes data. I kept the data for each player seperate foe ease of use when trying to compare insights from each. A joint data set will be made soon below.
 ```{r}
-Player1 <- Player1  %>%
+Player1 <- Player1_raw  %>%
   mutate(Mode = str_replace(GameType, "HC - ", ""))
 
-Player2 <- Player2  %>%
+Player2 <- Player2_raw  %>%
   mutate(Mode = str_replace(GameType, "HC - ", ""))
 ```
 
@@ -49,19 +49,19 @@ Clean_p2 <- Player2 %>%
 ```
 
 
-Need to be able to indentify whether or not score limit has been reached
+Need to be able to identify whether or not score limit has been reached
 ```{r}
 Clean_p1 <- Clean_p1 %>% 
+  filter(Score != is.na(Score))%>% 
   separate(Result, into = c("PlayerTeam", "OtherTeam"), sep = "-", convert = TRUE) %>% 
   mutate(MaxScore = pmax(PlayerTeam, OtherTeam),
-         LimitReached = MaxScore == ScoreLimit) %>% 
-  filter(Score != is.na(Score))
+         LimitReached = MaxScore == ScoreLimit) 
 
 Clean_p2 <- Clean_p2 %>% 
+  filter(Score != is.na(Score)) %>% 
   separate(Result, into = c("PlayerTeam", "OtherTeam"), sep = "-", convert = TRUE) %>% 
   mutate(MaxScore = pmax(PlayerTeam, OtherTeam),
-         LimitReached = MaxScore == ScoreLimit) %>% 
-  filter(Score != is.na(Score))
+         LimitReached = MaxScore == ScoreLimit) 
 ```
 
 
@@ -81,9 +81,9 @@ ggplot(
   mapping = aes(x = Mode, y = Pct_limit)
 ) + 
   labs(
-  title = "Game Modes by Score Limit",
-  x = "Game Modes",
-  y = "Percentage of Score Limit Reached"
+  title = "Percent of Games per Mode Where Score Limit was Reached",
+  x = "Game Mode",
+  y = "Percentage of Games Score Limit Reached"
 ) +
   geom_col(width = 0.5, fill = "lightblue") +
   theme_bw()
@@ -91,9 +91,9 @@ ggplot(
 
 ## Task 2 -- Inference
 
-#### Which predictors are associated with the TotalXP?
+### Task 2a - Which predictors are associated with the TotalXP?
 
-##### Convert categorical Variables
+#### Convert categorical Variables
 ```{r}
 Joined_players2 <- Joined_players %>%
   # Convert categorical variables to factors
@@ -117,21 +117,67 @@ Joined_players2 <- Joined_players2 %>%
   )
 ```
 
-##### Multiple Linear Regression
+#### Find Rows With NA
+```{r}
+col_NA_totals <- colSums(is.na(Joined_players2))
+col_NA_totals
+```
+
+#### Multiple Linear Regression
 ```{r}
 lm_xp <- lm(
   TotalXP ~ Eliminations + Deaths + Score + Damage +
-            GameType + Mode + PrimaryWeapon + XPType +
+            Mode + PrimaryWeapon + XPType +
             FullPartial + DidPlayerVote + LimitReached,
   data = Joined_players2
 )
 
+coef_df <- as.data.frame(summary(lm_xp)$coefficients)
+
+coef_df_p05 <- coef_df %>%
+  filter(`Pr(>|t|)`<.05)%>%
+  arrange(`Pr(>|t|)`) %>%
+  select(Estimate,`Pr(>|t|)`)
+
+coef_df_p1 <- coef_df %>%
+  filter(`Pr(>|t|)`<.1) %>%
+  arrange(`Pr(>|t|)`) %>%
+  select(Estimate,`Pr(>|t|)`)
 summary(lm_xp)
 ```
 
 Due to the large number of missing values in the variables Confirms, Denies, Objectives, ObjectiveKills, Captures, Diffuses, Plants, Detonates, Deposits, Time_Sec, and Time_Min, these variables were excluded from the model to avoid loss of data. After running the multiple linear regression, then looking at the p-values denoted by the Pr(>|t|) column, it tells us which predictors are statistically significant predictors for TotalXP. The predictors that will be deemed statistically significant will have a p-value less than 0.05. The predictors that fit this are: Eliminations, Score, Damage, PrimaryWeaponMilano 821, PrimaryWeaponXM4, and XPTypeDouble XP + 10%. These results indicate that TotalXP is primarily driven by player performance metrics and XP multipliers.
 
-#### Of the predictors associated with the response, select one of the predictors and explain the relationship between the predictor and TotalXP.
+```{r}
+coef_df_p1
+```
+#### Testing Different variables in a  single variable linear regression
+Looking at the associated P Values associated with the proper t value, it can be seen that the most strongly correlated variable for predicting TotalXP was if a player had Double XP or not. The next two strongest correlated variables were score and Eliminations. We next decided to see what the RMSE would be when we used each of these as a predictor.
+
+```{r}
+lm_xpType <- lm(TotalXP ~ XPType, data = Joined_players2)
+lm_score <- lm(TotalXP ~ Score, data = Joined_players2)
+lm_elims <- lm(TotalXP ~ Eliminations, data = Joined_players2)
+lm_t3 <- lm(TotalXP ~ XPType + Eliminations+ Score, data = Joined_players2)
+
+results <- as.data.frame(
+  rbind(
+    c("XPType",        sqrt(mean(residuals(lm_xpType)^2)), summary(lm_xpType)$r.squared),
+    c("Score",         sqrt(mean(residuals(lm_score)^2)),  summary(lm_score)$r.squared),
+    c("Eliminations",  sqrt(mean(residuals(lm_elims)^2)),  summary(lm_elims)$r.squared),
+    c("Top 3 Vars",    sqrt(mean(residuals(lm_t3)^2)),     summary(lm_t3)$r.squared)
+  )
+)
+colnames(results) <- c("Model", "RMSE", "Multiple R-squared")
+results
+summary(lm_t3)
+
+
+
+```
+The XPType variable represents, similar to the intercept, if a value of 7747.5164 should be added to TotalXP having an x value of 1 if a game did have Double XP and 0 if it did not, holding all other variables constant. The eliminations variable represents the increase to TotalXP for each elimination a player earned during a game, holding all other variables constant. The score variable represents the increase in TotalXP for each unit of score earned, holding all other variables constant.
+
+### Task 2b -Of the predictors associated with the response, select one of the predictors and explain the relationship between the predictor and TotalXP.
 ```{r}
 ggplot(Joined_players2, aes(x = XPType, y = TotalXP)) +
   geom_boxplot(fill = "lightblue") +
@@ -143,3 +189,7 @@ ggplot(Joined_players2, aes(x = XPType, y = TotalXP)) +
 ```
 
 The boxplot clearly shows that matches with Double XP result in much higher TotalXP than standard matches. This confirms the model result that XPType is a strong driver of XP gains.
+
+## Task 3 Prediction
+
+
