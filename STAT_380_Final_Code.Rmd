@@ -20,6 +20,7 @@ library(stringr)
 library(ggplot2)
 library(forcats)
 library(FNN)
+library(randomForest)
 ```
 
 Load in our data sets
