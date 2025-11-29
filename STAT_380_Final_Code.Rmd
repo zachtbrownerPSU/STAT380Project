@@ -28,6 +28,8 @@ Modes <- read.csv("CODGameModes.csv")
 Player1_raw <- read.csv("CODGames_p1_380.csv")
 Player2_raw <- read.csv("CODGames_p2_380.csv")
 ```
+## Google Slides Link
+https://docs.google.com/presentation/d/1PNZlMqMhsrZjMR_51fbR-UHyPgB0tzKvTeELMKPCPP8/edit?usp=sharing 
 
 ## Task 1 -- Exploratory Analysis
 
