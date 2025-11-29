@@ -303,7 +303,20 @@ knn_results
 
 ### Classification Method 2: Random Forests
 ```{r}
+rf_fitted <- randomForest(
+  x         = X_train,
+  y         = y_train
+)
 
+rf_fitted
+
+
+rf_pred <- predict(rf_fitted, newdata = X_test)
+
+rf_accuracy <- mean(rf_pred == y_test)
+rf_accuracy
+
+plot(rf_fitted)
 ```
 
 ### Classification Method 3: ----
