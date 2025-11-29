@@ -19,6 +19,7 @@ library(dplyr)
 library(stringr)
 library(ggplot2)
 library(forcats)
+library(FNN)
 ```
 
 Load in our data sets
@@ -55,13 +56,13 @@ Clean_p1 <- Clean_p1 %>%
   filter(Score != is.na(Score))%>% 
   separate(Result, into = c("PlayerTeam", "OtherTeam"), sep = "-", convert = TRUE) %>% 
   mutate(MaxScore = pmax(PlayerTeam, OtherTeam),
-         LimitReached = MaxScore == ScoreLimit) 
+         ScoreLimitReached = MaxScore == ScoreLimit) 
 
 Clean_p2 <- Clean_p2 %>% 
   filter(Score != is.na(Score)) %>% 
   separate(Result, into = c("PlayerTeam", "OtherTeam"), sep = "-", convert = TRUE) %>% 
   mutate(MaxScore = pmax(PlayerTeam, OtherTeam),
-         LimitReached = MaxScore == ScoreLimit) 
+         ScoreLimitReached = MaxScore == ScoreLimit) 
 ```
 
 
@@ -76,7 +77,7 @@ ggplot(
   data = Joined_players %>%
     group_by(Mode) %>%
     summarise(
-      Pct_limit = mean(LimitReached)
+      Pct_limit = mean(ScoreLimitReached)
       ),
   mapping = aes(x = Mode, y = Pct_limit)
 ) + 
@@ -104,7 +105,7 @@ Joined_players2 <- Joined_players %>%
     XPType = as.factor(XPType),
     FullPartial = as.factor(FullPartial),
     DidPlayerVote = as.factor(DidPlayerVote),
-    LimitReached = as.factor(LimitReached)
+    ScoreLimitReached = as.factor(ScoreLimitReached)
   )
 ```
 
@@ -128,7 +129,7 @@ col_NA_totals
 lm_xp <- lm(
   TotalXP ~ Eliminations + Deaths + Score + Damage +
             Mode + PrimaryWeapon + XPType +
-            FullPartial + DidPlayerVote + LimitReached,
+            FullPartial + DidPlayerVote + ScoreLimitReached,
   data = Joined_players2
 )
 
@@ -193,8 +194,83 @@ The boxplot clearly shows that matches with Double XP result in much higher Tota
 ## Task 3 Prediction
 ### Research Question: What are the best predictors for classifying game mode?
 
+#### Take only columns that are not game mode unique or we are not interested in. Also selection of only matches the player played fully.
+```{r}
+
+Task3_base <- Joined_players2 %>%
+  filter(Choice!='')%>%
+  filter(FullPartial!='Partial')%>%
+  select(
+    -any_of(c(
+      "Confirms", "Denies", "Objectives", "ObjectiveKills",
+      "Captures", "Diffuses", "Plants", "Detonates",
+      "Deposits", "Time_Sec", "Time_Min","Map1", "Map2","MapVote",
+      "GameType", "Date", "ScoreLimit", "TimeLimit", "MaxScore"
+    ))
+  ) 
+```
+
+#### Perform one-hot encoding and rejoin with numeric values
+```{r}
+X_task3 <- as.data.frame(model.matrix(
+  Mode ~ Choice + PrimaryWeapon + XPType + DidPlayerVote  + ScoreLimitReached ,
+  data = Task3_base
+)[, -1])
+
+numeric_df <- Task3_base %>%
+  select(PlayerTeam,OtherTeam,Eliminations,Deaths,Score,Damage,TotalXP)
+
+X_task3 <- cbind(X_task3,numeric_df)
+```
+
+#### Split data into testing and training sets
+```{r}
+set.seed(123)
+n_obs <- nrow(X_task3)
+train_idx <- sample(seq_len(n_obs), size = floor(0.7 * n_obs))
+test_idx  <- setdiff(seq_len(n_obs), train_idx)
+
+X_train <- X_task3[train_idx, ]
+X_test  <- X_task3[test_idx, ]
+y_train <- Task3_base$Mode[train_idx]
+y_test  <- Task3_base$Mode[test_idx]
+
+```
+
+
+#### Not Needed
+If wanted we could add this to the numeric_df to scale it, those vals are scaleable. 
+```{r eval=FALSE}
+X_train_sc <- scale(X_train)
+X_test_sc  <- scale(
+  X_test,
+  center = attr(X_train_sc, "scaled:center"),
+  scale  = attr(X_train_sc, "scaled:scale")
+)
+```
+
 ### Classification Method 1: KNN
 ```{r}
+
+k_values_knn <- 1:20
+knn_results <- data.frame(
+k = k_values_knn,
+accuracy = rep(NA, length(k_values_knn))
+)
+
+for (i in seq_along(k_values_knn)) {
+  k_now <- k_values_knn[i]
+  knn_fit <- knn(
+    train = X_train,
+    test  = X_test,
+    cl    = y_train,
+    k     = k_now
+    )
+  knn_results$accuracy[i] <- mean(as.character(knn_fit) == as.character(y_test))
+
+}
+
+knn_results
 
 ```
 
@@ -206,5 +282,5 @@ The boxplot clearly shows that matches with Double XP result in much higher Tota
 ### Classification Method 3: ----
 ```{r}
 
-```
+``` 
 
