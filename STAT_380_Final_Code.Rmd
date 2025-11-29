@@ -176,9 +176,34 @@ results
 summary(lm_t3)
 
 
-
 ```
 The XPType variable represents, similar to the intercept, if a value of 7747.5164 should be added to TotalXP having an x value of 1 if a game did have Double XP and 0 if it did not, holding all other variables constant. The eliminations variable represents the increase to TotalXP for each elimination a player earned during a game, holding all other variables constant. The score variable represents the increase in TotalXP for each unit of score earned, holding all other variables constant.
+
+```{r}
+ggplot(Joined_players2, aes(x = Eliminations, y = TotalXP)) +
+  geom_point(alpha = 0.4, color = "blue") +
+  geom_smooth(method = "lm", se = TRUE, color = "red", linewidth = 1.2) +
+  labs(
+    title = "Regression Line: TotalXP ~ Eliminations",
+    x = "Eliminations",
+    y = "Total XP"
+  ) +
+  theme_minimal(base_size = 14)
+```
+```{r}
+Joined_players2$pred_t3 <- predict(lm_t3)
+
+ggplot(Joined_players2, aes(x = pred_t3, y = TotalXP)) +
+  geom_point(alpha = 0.4, color = "steelblue") +
+  geom_smooth(method = "lm", color = "red", linewidth = 1) +
+  labs(
+    title = "Predicted vs Actual TotalXP (Top 3 Model)",
+    x = "Predicted TotalXP",
+    y = "Actual TotalXP"
+  ) +
+  theme_minimal(base_size = 14)
+
+```
 
 ### Task 2b -Of the predictors associated with the response, select one of the predictors and explain the relationship between the predictor and TotalXP.
 ```{r}
