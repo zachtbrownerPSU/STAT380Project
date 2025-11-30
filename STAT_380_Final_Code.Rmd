@@ -301,6 +301,13 @@ for (i in seq_along(k_values_knn)) {
 knn_results
 
 ```
+```{r}
+ggplot(data = knn_results, mapping = aes(x = k, y = accuracy)) +
+  geom_line()+
+  theme_minimal()
+
+```
+Looking at this plot, it can be seen a k of 13 yielded the highest accuracy of 68.8% at classifying the game mode type. An acceptable but not ideal number. 
 
 ### Classification Method 2: Random Forests
 ```{r}
