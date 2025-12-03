@@ -327,8 +327,60 @@ rf_accuracy
 plot(rf_fitted)
 ```
 
-### Classification Method 3: ----
+### Classification Method 3: PCA
 ```{r}
+sds <- apply(X_train, 2, sd, na.rm = TRUE)
+const_cols <- is.na(sds) | sds == 0
+
+X_train_pca <- X_train[, !const_cols, drop = FALSE]
+X_test_pca  <- X_test[, !const_cols, drop = FALSE]
+
+pca_fit <- princomp(X_train_pca, cor = TRUE)
+
+train_pcs <- predict(pca_fit, newdata = X_train_pca)
+test_pcs  <- predict(pca_fit, newdata = X_test_pca)
+
+max_pc <- min(20, ncol(train_pcs))
+pc_values <- 1:max_pc
+
+pca_knn_results <- data.frame(
+num_pcs = pc_values,
+accuracy = rep(NA_real_, length(pc_values))
+)
+
+for (i in seq_along(pc_values)) {
+d_now <- pc_values[i]
+knn_pca_fit <- knn(
+train = train_pcs[, 1:d_now, drop = FALSE],
+test  = test_pcs[, 1:d_now, drop = FALSE],
+cl    = y_train,
+k     = 13
+)
+pca_knn_results$accuracy[i] <- mean(as.character(knn_pca_fit) == as.character(y_test))
+}
+
+pca_knn_results
+
+best_row <- pca_knn_results[which.max(pca_knn_results$accuracy), ]
+best_row
+
+cat(
+"Using PCA + KNN , the best accuracy was",
+round(best_row$accuracy * 100, 1), "% with",
+best_row$num_pcs, "principal components.\n"
+)
 
 ``` 
+```{r}
+ggplot(pca_knn_results, aes(x = num_pcs, y = accuracy)) +
+geom_line() +
+geom_point() +
+theme_minimal() +
+labs(
+title = "PCA + KNN: Accuracy vs Number of Principal Components",
+x = "Number of Principal Components",
+y = "Classification Accuracy"
+)
 
+```
+This plot shows how classification accuracy changes as we increase the number of principal components used in the PCA + KNN model. We look for the peak of this curve to choose a PCA dimension that balances model performance with a simpler, lower dimensional representation of the original COD game data.
