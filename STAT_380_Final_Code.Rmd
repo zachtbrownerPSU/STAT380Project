@@ -10,17 +10,28 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Front Matter - Clean Environment, Load Libraries, Read dataset
+```{r}
+# installs if package(s) are not already installed:
+install_check <- function(package) {
+  if (!require(package, character.only = TRUE)) {
+    install.packages(package, dependencies = TRUE)
+  }
+  library(package, character.only = TRUE)
+}
+
+```
 
 ```{r}
-rm(list = ls())
-library(readr)
-library(tidyr)
-library(dplyr)
-library(stringr)
-library(ggplot2)
-library(forcats)
-library(FNN)
-library(randomForest)
+# just as a note install_check is a custom function that checks if a package needs to be installed and regardless of that, it loads each library.
+install_check("readr")
+install_check("tidyr")
+install_check("dplyr")
+install_check("stringr")
+install_check("ggplot2")
+install_check("forcats")
+install_check("FNN")
+install_check("randomForest")
+install_check("pROC")
 ```
 
 Load in our data sets
@@ -404,6 +415,14 @@ This PC1 vs PC2 plot shows each match in the space of the first two principal co
 
 ```{r}
 gini_importance <- importance(rf_fitted, type = 2) 
-importance_df <- as.data.frame(gini_importance)
+importance_df <- as.data.frame(gini_importance) 
 print(importance_df)
+```
+plot:
+```{r}
+```
+
+### AUC curves:
+```{r}
+
 ```
