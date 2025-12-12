@@ -24,17 +24,21 @@ library(randomForest)
 ```
 
 Load in our data sets
+
 ```{r}
 Modes <- read.csv("CODGameModes.csv")
 Player1_raw <- read.csv("CODGames_p1_380.csv")
 Player2_raw <- read.csv("CODGames_p2_380.csv")
 ```
+
 ## Google Slides Link
-https://docs.google.com/presentation/d/1PNZlMqMhsrZjMR_51fbR-UHyPgB0tzKvTeELMKPCPP8/edit?usp=sharing 
+
+<https://docs.google.com/presentation/d/1PNZlMqMhsrZjMR_51fbR-UHyPgB0tzKvTeELMKPCPP8/edit?usp=sharing>
 
 ## Task 1 -- Exploratory Analysis
 
 Remove hardcore indicators in a separate column to prepare the data for a join on the COD game modes data. I kept the data for each player seperate foe ease of use when trying to compare insights from each. A joint data set will be made soon below.
+
 ```{r}
 Player1 <- Player1_raw  %>%
   mutate(Mode = str_replace(GameType, "HC - ", ""))
@@ -44,6 +48,7 @@ Player2 <- Player2_raw  %>%
 ```
 
 Join each players data with the game modes data so we can answer our research question, "Which game mode is most likely to reach the score limit?".
+
 ```{r}
 Clean_p1 <- Player1 %>%
   left_join(Modes, by = c("Mode" = "Mode"))
@@ -52,8 +57,8 @@ Clean_p2 <- Player2 %>%
   left_join(Modes, by = c("Mode" = "Mode"))
 ```
 
-
 Need to be able to identify whether or not score limit has been reached
+
 ```{r}
 Clean_p1 <- Clean_p1 %>% 
   filter(Score != is.na(Score))%>% 
@@ -68,13 +73,14 @@ Clean_p2 <- Clean_p2 %>%
          ScoreLimitReached = MaxScore == ScoreLimit) 
 ```
 
-
 Joined the players to make one large data set to more accurately answer our research question for task 1.
+
 ```{r}
 Joined_players <- bind_rows(Clean_p1, Clean_p2)
 ```
 
 Create visualization displaying the game modes and the proportion of them reaching the score limit. Simple bar chart to explain this.
+
 ```{r}
 ggplot(
   data = Joined_players %>%
@@ -98,6 +104,7 @@ ggplot(
 ### Task 2a - Which predictors are associated with the TotalXP?
 
 #### Convert categorical Variables
+
 ```{r}
 Joined_players2 <- Joined_players %>%
   # Convert categorical variables to factors
@@ -113,6 +120,7 @@ Joined_players2 <- Joined_players %>%
 ```
 
 There are two different Double XP + 10%. 517 for one and one for the other. So we will merge those 2 as this is most likely a mistake when imputing the data.
+
 ```{r}
 Joined_players2 <- Joined_players2 %>%
   mutate(
@@ -122,12 +130,14 @@ Joined_players2 <- Joined_players2 %>%
 ```
 
 #### Find Rows With NA
+
 ```{r}
 col_NA_totals <- colSums(is.na(Joined_players2))
 col_NA_totals
 ```
 
 #### Multiple Linear Regression
+
 ```{r}
 lm_xp <- lm(
   TotalXP ~ Eliminations + Deaths + Score + Damage +
@@ -150,12 +160,14 @@ coef_df_p1 <- coef_df %>%
 summary(lm_xp)
 ```
 
-Due to the large number of missing values in the variables Confirms, Denies, Objectives, ObjectiveKills, Captures, Diffuses, Plants, Detonates, Deposits, Time_Sec, and Time_Min, these variables were excluded from the model to avoid loss of data. After running the multiple linear regression, then looking at the p-values denoted by the Pr(>|t|) column, it tells us which predictors are statistically significant predictors for TotalXP. The predictors that will be deemed statistically significant will have a p-value less than 0.05. The predictors that fit this are: Eliminations, Score, Damage, PrimaryWeaponMilano 821, PrimaryWeaponXM4, and XPTypeDouble XP + 10%. These results indicate that TotalXP is primarily driven by player performance metrics and XP multipliers.
+Due to the large number of missing values in the variables Confirms, Denies, Objectives, ObjectiveKills, Captures, Diffuses, Plants, Detonates, Deposits, Time_Sec, and Time_Min, these variables were excluded from the model to avoid loss of data. After running the multiple linear regression, then looking at the p-values denoted by the Pr(\>\|t\|) column, it tells us which predictors are statistically significant predictors for TotalXP. The predictors that will be deemed statistically significant will have a p-value less than 0.05. The predictors that fit this are: Eliminations, Score, Damage, PrimaryWeaponMilano 821, PrimaryWeaponXM4, and XPTypeDouble XP + 10%. These results indicate that TotalXP is primarily driven by player performance metrics and XP multipliers.
 
 ```{r}
 coef_df_p1
 ```
-#### Testing Different variables in a  single variable linear regression
+
+#### Testing Different variables in a single variable linear regression
+
 Looking at the associated P Values associated with the proper t value, it can be seen that the most strongly correlated variable for predicting TotalXP was if a player had Double XP or not. The next two strongest correlated variables were score and Eliminations. We next decided to see what the RMSE would be when we used each of these as a predictor.
 
 ```{r}
@@ -178,6 +190,7 @@ summary(lm_t3)
 
 
 ```
+
 The XPType variable represents, similar to the intercept, if a value of 7747.5164 should be added to TotalXP having an x value of 1 if a game did have Double XP and 0 if it did not, holding all other variables constant. The eliminations variable represents the increase to TotalXP for each elimination a player earned during a game, holding all other variables constant. The score variable represents the increase in TotalXP for each unit of score earned, holding all other variables constant.
 
 ```{r}
@@ -191,6 +204,7 @@ ggplot(Joined_players2, aes(x = Eliminations, y = TotalXP)) +
   ) +
   theme_minimal(base_size = 14)
 ```
+
 ```{r}
 Joined_players2$pred_t3 <- predict(lm_t3)
 
@@ -207,6 +221,7 @@ ggplot(Joined_players2, aes(x = pred_t3, y = TotalXP)) +
 ```
 
 ### Task 2b -Of the predictors associated with the response, select one of the predictors and explain the relationship between the predictor and TotalXP.
+
 ```{r}
 ggplot(Joined_players2, aes(x = XPType, y = TotalXP)) +
   geom_boxplot(fill = "lightblue") +
@@ -220,9 +235,11 @@ ggplot(Joined_players2, aes(x = XPType, y = TotalXP)) +
 The boxplot clearly shows that matches with Double XP result in much higher TotalXP than standard matches. This confirms the model result that XPType is a strong driver of XP gains.
 
 ## Task 3 Prediction
+
 ### Research Question: What are the best predictors for classifying game mode?
 
 #### Take only columns that are not game mode unique or we are not interested in. Also selection of only matches the player played fully.
+
 ```{r}
 
 Task3_base <- Joined_players2 %>%
@@ -239,6 +256,7 @@ Task3_base <- Joined_players2 %>%
 ```
 
 #### Perform one-hot encoding and rejoin with numeric values
+
 ```{r}
 X_task3 <- as.data.frame(model.matrix(
   Mode ~ Choice + PrimaryWeapon + XPType + DidPlayerVote  + ScoreLimitReached ,
@@ -252,6 +270,7 @@ X_task3 <- cbind(X_task3,numeric_df)
 ```
 
 #### Split data into testing and training sets
+
 ```{r}
 set.seed(123)
 n_obs <- nrow(X_task3)
@@ -265,9 +284,10 @@ y_test  <- Task3_base$Mode[test_idx]
 
 ```
 
-
 #### Not Needed
-If wanted we could add this to the numeric_df to scale it, those vals are scaleable. 
+
+If wanted we could add this to the numeric_df to scale it, those vals are scaleable.
+
 ```{r eval=FALSE}
 X_train_sc <- scale(X_train)
 X_test_sc  <- scale(
@@ -278,6 +298,7 @@ X_test_sc  <- scale(
 ```
 
 ### Classification Method 1: KNN
+
 ```{r}
 
 k_values_knn <- 1:20
@@ -301,15 +322,18 @@ for (i in seq_along(k_values_knn)) {
 knn_results
 
 ```
+
 ```{r}
 ggplot(data = knn_results, mapping = aes(x = k, y = accuracy)) +
   geom_line()+
   theme_minimal()
 
 ```
-Looking at this plot, it can be seen a k of 13 yielded the highest accuracy of 68.8% at classifying the game mode type. An acceptable but not ideal number. 
+
+Looking at this plot, it can be seen a k of 13 yielded the highest accuracy of 68.8% at classifying the game mode type. An acceptable but not ideal number.
 
 ### Classification Method 2: Random Forests
+
 ```{r}
 rf_fitted <- randomForest(
   x         = X_train,
@@ -328,13 +352,15 @@ plot(rf_fitted)
 ```
 
 ### Classification Method 3: PCA
+
 ```{r}
 sds <- apply(X_train, 2, sd, na.rm = TRUE)
 const_cols <- is.na(sds) | sds == 0
 X_train_pca <- X_train[, !const_cols, drop = FALSE]
 pca_fit <- princomp(X_train_pca, cor = TRUE)
 summary(pca_fit)
-``` 
+```
+
 ```{r}
 pve <- pca_fit$sdev^2 / sum(pca_fit$sdev^2)
 pve_df <- data.frame(
@@ -353,6 +379,7 @@ y = "Proportion of Variance Explained"
 )
 
 ```
+
 ```{r}
 train_scores <- data.frame(
 PC1 = pca_fit$scores[, 1],
@@ -369,4 +396,14 @@ y = "Principal Component 2",
 color = "Game Mode"
 )
 ```
+
 This PC1 vs PC2 plot shows each match in the space of the first two principal components, with points colored by game mode. We can see that Hardpoint games tend to cluster on the left side of PC1, while Kill Confirmed and TDM matches are more concentrated toward the center and right, with Domination appearing mostly in the upper-right region but with far fewer observations. There is some visible separation between modes, especially between Hardpoint and the other game types, but there is still a fair amount of overlap. This suggests that the main directions of variation captured by the first two principal components do carry information about game mode, but no single linear boundary in this 2-D PC space can perfectly classify all four modes.
+
+##Other Visualizations and Analysis:
+###Mean Decrease Gini (Random Forest):
+
+```{r}
+gini_importance <- importance(rf_fitted, type = 2) 
+importance_df <- as.data.frame(gini_importance)
+print(importance_df)
+```
