@@ -348,7 +348,8 @@ Looking at this plot, it can be seen a k of 13 yielded the highest accuracy of 6
 ```{r}
 rf_fitted <- randomForest(
   x         = X_train,
-  y         = y_train
+  y         = y_train, 
+  importance=TRUE
 )
 
 rf_fitted
@@ -414,7 +415,7 @@ This PC1 vs PC2 plot shows each match in the space of the first two principal co
 ###Mean Decrease Gini (Random Forest):
 
 ```{r}
-gini_importance <- importance(rf_fitted, type = 2) 
+gini_importance <- importance(rf_fitted, type = 1) 
 importance_df <- as.data.frame(gini_importance) 
 print(importance_df)
 ```
