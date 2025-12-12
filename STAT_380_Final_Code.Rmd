@@ -369,6 +369,7 @@ plot(rf_fitted)
 sds <- apply(X_train, 2, sd, na.rm = TRUE)
 const_cols <- is.na(sds) | sds == 0
 X_train_pca <- X_train[, !const_cols, drop = FALSE]
+X_test_pca <- X_test[, !const_cols, drop = FALSE]
 pca_fit <- princomp(X_train_pca, cor = TRUE)
 summary(pca_fit)
 ```
@@ -390,6 +391,59 @@ x = "Principal Component",
 y = "Proportion of Variance Explained"
 )
 
+```
+```{r}
+num_pcs <- 13
+
+train_scores_knn <- pca_fit$scores[, 1:num_pcs, drop = FALSE]
+test_scores_knn  <- predict(pca_fit, newdata = X_test_pca)[, 1:num_pcs, drop = FALSE]
+
+
+k_values_knn <- 1:20
+knn_results_pca <- data.frame(
+k = k_values_knn,
+accuracy = rep(NA, length(k_values_knn))
+)
+
+for (i in seq_along(k_values_knn)) {
+  k_now <- k_values_knn[i]
+  knn_fit <- knn(
+    train = X_train_pca,
+    test  = X_test_pca,
+    cl    = y_train,
+    k     = k_now
+    )
+  knn_results_pca$accuracy[i] <- mean(as.character(knn_fit) == as.character(y_test))
+
+}
+knn_results_pca
+```
+```{r}
+best_k <- knn_results_pca$k[which.max(knn_results$accuracy)]
+
+pred_test <- knn(
+  train = train_scores_knn,
+  test  = test_scores_knn,
+  cl    = y_train,
+  k     = best_k
+)
+
+test_plot_df <- data.frame(
+  PC1 = test_scores_knn[,1],
+  PC2 = test_scores_knn[,2],
+  Pred = pred_test
+)
+
+ggplot(test_plot_df, aes(PC1, PC2, color = Pred)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm")
+  theme_minimal() +
+  labs(
+    title = "PC1 vs PC2 Colored by Game Mode Predict",
+    x = "Principal Component 1",
+    y = "Principal Component 2",
+    color = "Game Mode Predict"
+    )
 ```
 
 ```{r}
@@ -421,9 +475,23 @@ importance_df[order(importance_df$MeanDecreaseGini, decreasing = TRUE),]
 ```
 plot:
 ```{r}
+impplot <- varImpPlot(rf_fitted, n.var=min(10, nrow(rf_fitted$importance)))
 ```
 
 ### AUC curves:
 ```{r}
+for (x in 1:4) {
+  rf_probs <- predict(rf_fitted,  type="prob")[, x]
+  rocobj <- roc(y_train, rf_probs)
+  plot(rocobj)
+  auc(rocobj)
+}
+```
+```{r}
+
+
+
+knn_pred <- knn(X_train, X_test, train_labels, k = 13, prob = TRUE)
+prob <- attr(knn_pred, "prob")
 
 ```
