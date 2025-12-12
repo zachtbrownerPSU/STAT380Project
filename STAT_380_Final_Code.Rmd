@@ -415,9 +415,9 @@ This PC1 vs PC2 plot shows each match in the space of the first two principal co
 ###Mean Decrease Gini (Random Forest):
 
 ```{r}
-gini_importance <- importance(rf_fitted, type = 1) 
+gini_importance <- importance(rf_fitted) 
 importance_df <- as.data.frame(gini_importance) 
-print(importance_df)
+importance_df[order(importance_df$MeanDecreaseGini, decreasing = TRUE),]
 ```
 plot:
 ```{r}
