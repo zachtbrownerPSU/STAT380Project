@@ -427,16 +427,14 @@ pred_test <- knn(
   cl    = y_train,
   k     = best_k
 )
-
 test_plot_df <- data.frame(
   PC1 = test_scores_knn[,1],
   PC2 = test_scores_knn[,2],
   Pred = pred_test
 )
-
 ggplot(test_plot_df, aes(PC1, PC2, color = Pred)) +
   geom_point(alpha = 0.6) +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
   theme_minimal() +
   labs(
     title = "PC1 vs PC2 Colored by Game Mode Predict",
@@ -488,10 +486,48 @@ for (x in 1:4) {
 }
 ```
 ```{r}
+rf_prob_mat <- predict(rf_fitted, type = "prob")
+cls_rf <- colnames(rf_prob_mat)
 
+par(mfrow = c(2, 2))
 
+auc_rf <- numeric(length(cls_rf))
+names(auc_rf) <- cls_rf
 
-knn_pred <- knn(X_train, X_test, train_labels, k = 13, prob = TRUE)
-prob <- attr(knn_pred, "prob")
+for (pos_rf in cls_rf) {
+  y_bin_rf <- as.integer(as.character(y_train) == pos_rf)
+  roc_rf <- roc(response = y_bin_rf, predictor = rf_prob_mat[, pos_rf], quiet = TRUE)
+  plot(roc_rf, main = paste("ROC:", pos_rf), print.auc = TRUE)
+  auc_rf[pos_rf] <- as.numeric(auc(roc_rf))
+}
+
+par(mfrow = c(1, 1))
+auc_rf
+```
+```{r}
+
+lvl_ovr <- levels(factor(y_train))
+
+par(mfrow = c(2, 2))
+
+auc_ovr_vec <- numeric(length(lvl_ovr))
+names(auc_ovr_vec) <- lvl_ovr
+
+for (pos_ovr in lvl_ovr) {
+  lab_tr_bin_ovr <- factor(ifelse(y_train == pos_ovr, pos_ovr, "rest"), levels = c("rest", pos_ovr))
+  lab_te_bin_ovr <- factor(ifelse(y_test  == pos_ovr, pos_ovr, "rest"), levels = c("rest", pos_ovr))
+
+  pred_bin_ovr <- knn(train = X_train, test = X_test, cl = lab_tr_bin_ovr, k = 13, prob = TRUE)
+  pwin_ovr <- attr(pred_bin_ovr, "prob")
+  ppos_ovr <- ifelse(pred_bin_ovr == pos_ovr, pwin_ovr, 1 - pwin_ovr)
+
+  roc_obj_ovr <- roc(response = lab_te_bin_ovr, predictor = ppos_ovr, levels = c("rest", pos_ovr), direction = "<")
+  plot(roc_obj_ovr, main = paste("ROC", pos_ovr), print.auc = TRUE)
+
+  auc_ovr_vec[pos_ovr] <- as.numeric(auc(roc_obj_ovr))
+}
+
+par(mfrow = c(1, 1))
+auc_ovr_vec
 
 ```
